@@ -1,0 +1,19 @@
+<div class="parent">
+  <div class="parents-things">
+    <h3>Parent</h3>
+    <input
+      type="text"
+      placeholder="Message to child"
+      #messageBox
+      [value]="newMessage"
+    />
+    <input
+      class="btn-send"
+      type="button"
+      value="send to child"
+      (click)="sendMessage(messageBox.value)"
+    />
+  </div>
+
+  <app-child [messages]="messages" (onDeleteTask)="deleteMessage($event)"></app-child>
+</div>

@@ -1,0 +1,66 @@
+h2 {
+  font-size: larger;
+  color: blueviolet;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 2rem;
+}
+
+.btn-checkout {
+  outline: none;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+h3 {
+  color: white;
+}
+.parent {
+  width: 90%;
+  background-color: rgb(25, 187, 125);
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.child {
+  background-color: rgb(231, 95, 170);
+  width: 50%;
+  margin: 2rem;
+  border-radius: 1rem;
+}
+
+.btn-send {
+  margin-left: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+}
+
+span {
+  color: rgb(43, 39, 39);
+  font-size: 12px;
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+span:hover {
+  font-weight: bolder;
+}
+
+.example {
+  color: green;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+}

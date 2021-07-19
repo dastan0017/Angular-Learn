@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Component interaction</h1>
+  <div class="box">
+    <h2>1. Passing data from parent to child</h2>
+    <p>
+      + Passed data to child component using
+      <span class="example">[dataToChild]="data"</span>
+      in template of the component
+    </p>
+    <p>
+      + Imported data from parent using
+      <span class="example">@Input() dataToChild: string[]</span>
+    </p>
+    <h2>2. Passing data from Child to parent element</h2>
+    <p>
+      + Added event listener to child element in list and used event emitter to
+      Output:
+
+      <span class="example"
+        >@Output() onDeleteMessage = new EventEmitter()</span
+      >
+    </p>
+    <p>
+      + Emitted event to parent component by doing:
+      <span class="example">onDeleteMessage.emit(messageToDelete)</span>
+    </p>
+    <app-parent></app-parent>
+  </div>
+</div>

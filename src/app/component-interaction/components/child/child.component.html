@@ -1,0 +1,12 @@
+<div class="child">
+  <h3>Child</h3>
+
+  <div class="list-container">
+    <p *ngFor="let message of messages">
+      {{ message }}
+      <button class="btn btn-warning" (click)="deleteElement(message)">
+        X
+      </button>
+    </p>
+  </div>
+</div>

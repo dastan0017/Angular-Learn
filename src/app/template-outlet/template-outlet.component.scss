@@ -1,0 +1,22 @@
+.inner-container {
+  width: 80%;
+  background-color: rgb(108, 143, 143);
+  border-radius: 1rem;
+  text-align: center;
+  padding: 4rem;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  color: white;
+}
+
+.new-component {
+  border: 2px solid white;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(240, 255, 255, 0.555);
+  padding: 3rem;
+  overflow: hidden;
+}

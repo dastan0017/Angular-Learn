@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="inner-container">
+    <h1>Working with ng-template-outlet</h1>
+    <ng-container
+      [ngTemplateOutlet]="headerTemplate"
+      [ngTemplateOutletContext]="{ $implicit: textFromComponent }"
+    >
+    </ng-container>
+    <ng-template #headerTemplate let-textFromComponent>
+      This Message is from ng-template-outlet<br />
+      Hello bro, How are you doinig?<br />
+      <hr />
+      <h3 style="font-weight: bold; color: white">{{ textFromComponent }}</h3>
+    </ng-template>
+  </div>
+
+  <div class="inner-container">
+    <h1>Passing component as a Template</h1>
+    <div class="new-component">
+      <ng-container [ngTemplateOutlet]="component"> </ng-container>
+
+      <ng-template #component>
+        <app-observable></app-observable>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="inner-container">
+    <h1>Passing template as input property in another component</h1>
+
+    <app-parent [template]="componentTemplate"></app-parent>
+
+    <ng-template #componentTemplate>
+      <app-sibling></app-sibling>
+    </ng-template>
+  </div>
+</div>

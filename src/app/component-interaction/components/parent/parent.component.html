@@ -15,5 +15,10 @@
     />
   </div>
 
-  <app-child [messages]="messages" (onDeleteTask)="deleteMessage($event)"></app-child>
+  <app-child
+    [messages]="messages"
+    (onDeleteTask)="deleteMessage($event)"
+  ></app-child>
+
+  <ng-container [ngTemplateOutlet]="template"></ng-container>
 </div>

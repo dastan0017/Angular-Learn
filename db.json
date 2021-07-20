@@ -1,0 +1,49 @@
+{
+  "friends": [
+    {
+      "id": 0,
+      "age": "19",
+      "name": "AmanpPASSWORD",
+      "surname": "NikulinDele"
+    },
+    {
+      "id": 1,
+      "age": "20",
+      "name": "Abai Zhaman Bala",
+      "surname": "MusHHHHHksdfasdf"
+    },
+    {
+      "id": 2,
+      "age": 9,
+      "name": "Mirlan",
+      "weight": 14.0067,
+      "surname": "Dandan"
+    },
+    {
+      "id": 3,
+      "age": "10",
+      "name": "Zuhrap",
+      "surname": "HeroService"
+    },
+    {
+      "id": 4,
+      "age": 11,
+      "name": "Dastan",
+      "weight": 14.0067,
+      "surname": "Makeup"
+    },
+    {
+      "id": 5,
+      "age": 12,
+      "name": "Esen",
+      "weight": 14.0067,
+      "surname": "Teller"
+    },
+    {
+      "id": 6,
+      "age": "18",
+      "name": "Sixth PLayer",
+      "surname": "Rakhmanzhanov"
+    }
+  ]
+}

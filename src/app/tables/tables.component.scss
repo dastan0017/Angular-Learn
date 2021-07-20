@@ -2,3 +2,34 @@
   width: 90%;
   margin: 0 auto;
 }
+.form-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+}
+
+form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  padding: 2rem;
+}
+
+.btn {
+  width: fit-content;
+  align-self: center;
+  margin: 2rem;
+}
+
+.row:hover {
+  background-color: rgba(63, 209, 87, 0.5);
+}

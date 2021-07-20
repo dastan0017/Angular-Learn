@@ -1,0 +1,14 @@
+<div class="container">
+  <label for="search" style="margin-right: 1rem">Search field: </label>
+  <input
+    name="search"
+    id="search"
+    type="text"
+    placeholder="search for..."
+    #searchInput
+  />
+
+  <hr />
+  <h4>Your search history:</h4>
+  <p *ngFor="let el of searchQueries">{{ el }}</p>
+</div>

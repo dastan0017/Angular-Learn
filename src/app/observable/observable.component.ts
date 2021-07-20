@@ -1,7 +1,13 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { fromEvent, observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { fromEvent, observable, Subscription } from 'rxjs';
+import {
+  debounce,
+  debounceTime,
+  distinctUntilChanged,
+  map,
+} from 'rxjs/operators';
 
+import { DebounceTimeService } from '../services/debounce-time.service';
 @Component({
   selector: 'app-observable',
   templateUrl: './observable.component.html',
@@ -9,12 +15,14 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 })
 export class ObservableComponent implements OnInit {
   @ViewChild('searchInput', { static: true }) searchInput!: ElementRef;
-
+  @ViewChild('searchInput2', { static: true }) searchInput2!: ElementRef;
+  subscriber$!: Subscription;
   searchQueries: string[] = [];
-  constructor() {}
+  constructor(private searchService: DebounceTimeService) {}
 
   ngOnInit(): void {
-    fromEvent(this.searchInput.nativeElement, 'keyup')
+    // 1. Creating Observable right here
+    fromEvent(this.searchInput2.nativeElement, 'keyup')
       .pipe(
         debounceTime(2000),
         map((event: any) => {
@@ -22,12 +30,21 @@ export class ObservableComponent implements OnInit {
         }),
         distinctUntilChanged()
       )
-      .subscribe(() => {
+      .subscribe((value) => {
         alert(
-          'You stopped typing bro\n your current search title is: ' +
-            this.searchInput.nativeElement.value
+          'You stopped typing bro\n your current search title is: ' + value
         );
-        this.searchTitle(this.searchInput.nativeElement.value);
+        this.searchTitle(value);
+      });
+
+    // 2. Subscribing to created observable
+    this.subscriber$ = this.searchService
+      .searchMessage(fromEvent(this.searchInput.nativeElement, 'keyup'))
+      .subscribe((value) => {
+        alert(
+          'You stopped typing bro\n your current search title is: ' + value
+        );
+        this.searchTitle(value);
       });
   }
 

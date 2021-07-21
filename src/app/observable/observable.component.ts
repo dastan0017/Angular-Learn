@@ -1,12 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { fromEvent, Subscription } from 'rxjs';
-import {
-  debounce,
-  debounceTime,
-  distinctUntilChanged,
-  map,
-} from 'rxjs/operators';
+import { Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 
 import { DebounceTimeService } from '../services/debounce-time.service';
 @Component({
@@ -15,11 +10,8 @@ import { DebounceTimeService } from '../services/debounce-time.service';
   styleUrls: ['./observable.component.scss'],
 })
 export class ObservableComponent implements OnInit {
-  @ViewChild('searchInput', { static: true }) searchInput!: ElementRef;
-  @ViewChild('searchInput2', { static: true }) searchInput2!: ElementRef;
   subscriber$!: Subscription;
   searchQueries: string[] = [];
-  ///////////////////////////////
   input1 = new FormControl('');
   input2 = new FormControl('');
   constructor(private searchService: DebounceTimeService) {}

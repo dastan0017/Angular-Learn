@@ -19,13 +19,7 @@ export class ObservableComponent implements OnInit {
   ngOnInit(): void {
     // 1. Creating Observable right here
     this.input1.valueChanges
-      .pipe(
-        debounceTime(2000),
-        map((event: any) => {
-          return event.target.value;
-        }),
-        distinctUntilChanged()
-      )
+      .pipe(debounceTime(2000), distinctUntilChanged())
       .subscribe((value) => {
         alert(
           'You stopped typing bro\n your current search title is: ' + value

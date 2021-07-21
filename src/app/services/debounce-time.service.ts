@@ -9,12 +9,6 @@ export class DebounceTimeService {
   constructor() {}
 
   searchMessage(msg: Observable<any>) {
-    return msg.pipe(
-      debounceTime(2000),
-      map((message: any) => {
-        return message;
-      }),
-      distinctUntilChanged()
-    );
+    return msg.pipe(debounceTime(2000), distinctUntilChanged());
   }
 }

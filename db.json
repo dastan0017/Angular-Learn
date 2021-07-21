@@ -4,7 +4,7 @@
       "id": 0,
       "age": "19",
       "name": "AmanpPASSWORD",
-      "surname": "NikulinDele"
+      "surname": "3432123432123432123432"
     },
     {
       "id": 1,
@@ -14,9 +14,8 @@
     },
     {
       "id": 2,
-      "age": 9,
+      "age": "9",
       "name": "Mirlan",
-      "weight": 14.0067,
       "surname": "Dandan"
     },
     {
@@ -43,6 +42,12 @@
       "id": 6,
       "age": "18",
       "name": "Sixth PLayer",
+      "surname": "Rakhmanzhanov"
+    },
+    {
+      "id": 7,
+      "age": "18",
+      "name": "Dastan",
       "surname": "Rakhmanzhanov"
     }
   ]

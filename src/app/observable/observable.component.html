@@ -8,6 +8,7 @@
     type="text"
     placeholder="search for..."
     #searchInput
+    [formControl]="input1"
   />
 
   <hr />
@@ -20,8 +21,11 @@
     type="text"
     placeholder="search for..."
     #searchInput2
+    [formControl]="input2"
   />
-
+  <hr />
+  <h3>{{ input1.value }}</h3>
+  <h3>{{ input2.value }}</h3>
   <hr />
   <h4>Your search history:</h4>
   <p *ngFor="let el of searchQueries">{{ el }}</p>

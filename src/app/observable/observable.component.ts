@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { fromEvent, observable, Subscription } from 'rxjs';
+import { FormControl } from '@angular/forms';
+import { fromEvent, Subscription } from 'rxjs';
 import {
   debounce,
   debounceTime,
@@ -18,11 +19,14 @@ export class ObservableComponent implements OnInit {
   @ViewChild('searchInput2', { static: true }) searchInput2!: ElementRef;
   subscriber$!: Subscription;
   searchQueries: string[] = [];
+  ///////////////////////////////
+  input1 = new FormControl('');
+  input2 = new FormControl('');
   constructor(private searchService: DebounceTimeService) {}
 
   ngOnInit(): void {
     // 1. Creating Observable right here
-    fromEvent(this.searchInput2.nativeElement, 'keyup')
+    this.input1.valueChanges
       .pipe(
         debounceTime(2000),
         map((event: any) => {
@@ -39,7 +43,7 @@ export class ObservableComponent implements OnInit {
 
     // 2. Subscribing to created observable
     this.subscriber$ = this.searchService
-      .searchMessage(fromEvent(this.searchInput.nativeElement, 'keyup'))
+      .searchMessage(this.input2.valueChanges)
       .subscribe((value) => {
         alert(
           'You stopped typing bro\n your current search title is: ' + value
